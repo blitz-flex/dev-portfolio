@@ -1,2 +1,2 @@
 ## Test App
-[Little Profesor Demo ](https://little-profesor.netlify.app/)
+[Little Profesor Demo ](https://blitz-flex.github.io/Repository-of-projects/)
