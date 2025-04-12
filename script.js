@@ -57,3 +57,11 @@ const sr = ScrollReveal({
 document.querySelectorAll('[data-sr]').forEach((el) => {
   sr.reveal(el);
 });
+
+// Logo click handler
+document.querySelector('.site-logo').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#home').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+});

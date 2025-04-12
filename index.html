@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irakli's Portfolio</title>
+    <title>Portfolio</title>
     <link href="./dist/output.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,7 +11,9 @@
 <body>
     <header class="site-header">
         <div class="header-container">
-            <a href="/" class="site-logo">Portfolio</a>
+            <a href="#home" class="site-logo"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
+                <g transform=""><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M5.489,24.746l12.936,3.715l-2.843,-8.842zM44.571,25.524l-12.81,-2.869l2.312,9.607zM17.676,17.451l11.39,2.551l-3.702,-15.385zM29.587,22.168l-11.944,-2.675l3.096,9.633l11.303,3.246zM31.877,34.405l-10.401,-2.987l4.506,14.017zM33.992,34.691l-6.819,12.758l19.578,-20.947zM47.226,24.019l-20.384,-21.811l4.399,18.281l15.799,3.538c0.061,-0.012 0.124,-0.008 0.186,-0.008zM19.161,30.753l-16.24,-4.664l21.724,21.725zM15.306,17.516l8.933,-14.912l-21.085,21.085z"></path></g></g></g>
+                </svg></a>
             
             <div class="header-actions">
                 <nav class="desktop-nav">
@@ -21,7 +23,8 @@
                         <li><a href="#experience" class="nav-link">Experience</a></li>
                         <li><a href="#projects" class="nav-link">Projects</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
-                        <li><a href="/resume.pdf" class="nav-link button button-outline button-sm resume-button">Resume</a></li>
+                        <li><a href="src/Irakli_Abashidze_CV.pdf" class="nav-link button button-outline button-sm resume-button">Resume</a></li>
+
                     </ul>
                 </nav>
                 
@@ -263,12 +266,17 @@
         </section>
         <section id="contact" class="px-6 py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
             <div class="max-w-md mx-auto">
-              <h2 class="text-3xl font-bold mb-6 text-center">Contact</h2>
+                
+                    <h2 class="section-heading">
+                        <span class="section-number"></span>
+                        Contact
+                    </h2>
+              
               <p class="text-center text-gray-400 mb-8">
-
+                
               </p>
               
-              <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST" class="space-y-6">
+              <form id="contact-form" action="https://formspree.io/f/myzeojjw" method="POST" class="space-y-6">
                 <!-- Name Input -->
                 <div>
                   <label for="name" class="sr-only">Name</label>
@@ -279,7 +287,7 @@
                 <!-- Email Input -->
                 <div>
                   <label for="email" class="sr-only">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Your Email" required 
+                  <input type="email" id="email" name="_replyto" placeholder="Your Email" required 
                     class="w-full py-3 px-4 bg-gray-800 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition">
                 </div>
                 
@@ -290,18 +298,39 @@
                     class="w-full py-3 px-4 bg-gray-800 text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 transition resize-none"></textarea>
                 </div>
                 
+                <!-- Anti-spam protection -->
+                <input type="text" name="_gotcha" style="display: none;">
+                
                 <!-- Submit Button -->
                 <button type="submit" 
-                  class="w-full py-3 bg-teal-500 text-white font-bold rounded-lg hover:bg-teal-600 transition">
-                  Send Message →
+                  class="w-full py-3 bg-black text-white font-bold rounded-lg 
+                         transition-all duration-300 hover:bg-opacity-80
+                         focus:outline-none focus:ring-2 focus:ring-gray-400">
+                  Send Message
                 </button>
               </form>
             </div>
           </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
         
         <!-- Social Media Links Section -->
         <section id="social" class="py-12 px-6 text-center">
-          <h2 class="text-3xl font-bold mb-8 text-heading dark:text-dark-heading">Connect With Me</h2>
+          <h2 class="text-3xl font-bold mb-8 text-eading dark:text-dark-heading">Connect With Me</h2>
           
           <div class="flex justify-center items-center gap-6">
             <!-- GitHub -->
@@ -327,9 +356,9 @@
             <!-- Twitter/X -->
             <a href="https://x.com/irakli_dev" target="_blank" rel="noopener noreferrer" 
                class="text-heading dark:text-dark-heading hover:text-accent dark:hover:text-dark-accent transition-colors p-2"
-               aria-label="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+               aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <path d="M18 6L6 18M6 6l12 12"></path>
               </svg>
             </a>
             
@@ -337,13 +366,6 @@
           </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="text-center text-sm py-6 text-secondary dark:text-dark-secondary font-mono">
-      
-      <p>Designed & Built by <a href="https://github.com/blitz-flex" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-dark-accent hover:underline">Irakli</a><br>Inspired by various online portfolios.</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
