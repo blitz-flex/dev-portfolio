@@ -7,6 +7,8 @@
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build:prod": "cross-env NODE_ENV=production tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "predeploy": "npm run build:prod",
+    "deploy": "gh-pages -d . --src '{index.html,script.js,dist/**,assets/**}' -b gh-pages -m 'Deploy website'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.3"
   }
