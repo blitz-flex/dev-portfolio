@@ -7,6 +7,8 @@
     <link href="./dist/output.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -303,11 +305,16 @@
                 
                 <!-- Submit Button -->
                 <button type="submit" 
-                  class="w-full py-3 bg-black text-white font-bold rounded-lg 
-                         transition-all duration-300 hover:bg-opacity-80
-                         focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    class="w-full py-3 bg-black text-white font-bold rounded-lg 
+                           transition-all duration-300 hover:bg-opacity-80 hover:-translate-y-1 <!-- დამატებულია -->
+                           focus:outline-none focus:ring-2 focus:ring-gray-400">
                   Send Message
                 </button>
+
+                
+
+
+
               </form>
             </div>
           </section>
