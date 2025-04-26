@@ -13,9 +13,18 @@
 <body>
     <header class="site-header">
         <div class="header-container">
-            <a href="#home" class="site-logo"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
-                <g transform=""><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M5.489,24.746l12.936,3.715l-2.843,-8.842zM44.571,25.524l-12.81,-2.869l2.312,9.607zM17.676,17.451l11.39,2.551l-3.702,-15.385zM29.587,22.168l-11.944,-2.675l3.096,9.633l11.303,3.246zM31.877,34.405l-10.401,-2.987l4.506,14.017zM33.992,34.691l-6.819,12.758l19.578,-20.947zM47.226,24.019l-20.384,-21.811l4.399,18.281l15.799,3.538c0.061,-0.012 0.124,-0.008 0.186,-0.008zM19.161,30.753l-16.24,-4.664l21.724,21.725zM15.306,17.516l8.933,-14.912l-21.085,21.085z"></path></g></g></g>
-                </svg></a>
+            <a href="#home" class="site-logo text-heading dark:text-dark-heading"> 
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
+                    <g transform="">
+                        <!-- ყურადღება მიაქციე ამ <g> თეგს: fill="#000000" წაშლილია და fill="currentColor" დამატებულია -->
+                        <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                            <g transform="scale(5.12,5.12)">
+                                <path d="M5.489,24.746l12.936,3.715l-2.843,-8.842zM44.571,25.524l-12.81,-2.869l2.312,9.607zM17.676,17.451l11.39,2.551l-3.702,-15.385zM29.587,22.168l-11.944,-2.675l3.096,9.633l11.303,3.246zM31.877,34.405l-10.401,-2.987l4.506,14.017zM33.992,34.691l-6.819,12.758l19.578,-20.947zM47.226,24.019l-20.384,-21.811l4.399,18.281l15.799,3.538c0.061,-0.012 0.124,-0.008 0.186,-0.008zM19.161,30.753l-16.24,-4.664l21.724,21.725zM15.306,17.516l8.933,-14.912l-21.085,21.085z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
             
             <div class="header-actions">
                 <nav class="desktop-nav">
@@ -48,7 +57,7 @@
         </div>
     </header>
 
-    <nav class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav fixed top-0 right-0 w-3/4 max-w-sm h-full bg-lightbg dark:bg-darkbg transform translate-x-full transition-all duration-300 ease-in-out z-[60] shadow-lg backdrop-blur-sm opacity-0 pointer-events-none" id="mobileNav">
         <button id="closeMenuBtn" class="mobile-nav-close">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
