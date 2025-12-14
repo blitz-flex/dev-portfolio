@@ -4,6 +4,8 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import Contact from './components/Contact'
+import Social from './components/Social'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -32,6 +34,8 @@ function App() {
         <About />
         <Experience />
         <Projects />
+        <Contact />
+        <Social />
       </main>
     </>
   )

@@ -24,16 +24,16 @@ function Social() {
       name: 'Twitter/X',
       url: 'https://x.com/irakli_dev',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 6L6 18M6 6l12 12"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
         </svg>
       )
     }
   ]
 
   return (
-    <section id="social" className="py-12 px-6 text-center">
-      <h2 className="text-3xl font-bold mb-8 text-heading">Connect With Me</h2>
+    <section id="social" className="py-12 px-6 text-center bg-lightbg dark:bg-darkbg">
+      <h2 className="text-3xl font-bold mb-8 text-heading dark:text-dark-heading">Connect With Me</h2>
       
       <div className="flex justify-center items-center gap-6">
         {socialLinks.map((link, index) => (
@@ -42,7 +42,7 @@ function Social() {
             href={link.url} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-heading hover:text-accent transition-colors p-2"
+            className="text-heading dark:text-dark-heading hover:text-accent dark:hover:text-dark-accent transition-colors p-2"
             aria-label={link.name}
           >
             {link.icon}
