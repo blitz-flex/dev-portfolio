@@ -409,14 +409,6 @@ html.dark .section-heading .section-number {
   @apply py-24;
 }
 
-.section-heading.justify-center {
-  @apply justify-center;
-}
-
-.section-heading.justify-center::after {
-  @apply hidden;
-}
-
 .form-group {
   @apply mb-6;
 }
