@@ -2,9 +2,9 @@ function About() {
   const skills = ['HTML5', 'Tailwind CSS', 'JavaScript', 'React', 'C', 'Python']
 
   return (
-    <section id="about" className="py-24 max-w-4xl mx-auto px-6">
+    <section id="about" className="py-24 max-w-5xl mx-auto px-6">
       <h2 className="section-title">
-        <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2">01.</span>
+        <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2"></span>
         About Me
         <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
       </h2>

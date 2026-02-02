@@ -27,7 +27,7 @@ function Projects() {
     <section id="projects" className="py-24 bg-lightbg dark:bg-darkbg">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="section-title">
-          <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2">03.</span>
+          <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2"></span>
           Portfolio
           <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
         </h2>

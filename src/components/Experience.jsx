@@ -27,9 +27,9 @@ function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-24 max-w-4xl mx-auto px-6">
+    <section id="experience" className="py-24 max-w-5xl mx-auto px-6">
       <h2 className="section-title">
-        <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2">02.</span>
+        <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2"></span>
         Where I've Worked
         <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
       </h2>

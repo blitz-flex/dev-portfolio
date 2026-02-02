@@ -33,7 +33,7 @@ function Social() {
 
   return (
     <section id="social" className="pt-8 pb-4 px-6 border-t border-light-border dark:border-dark-border bg-lightbg dark:bg-darkbg">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Social Icons */}
         <div className="flex justify-center items-center gap-6 mb-6">
           {socialLinks.map((link, index) => (

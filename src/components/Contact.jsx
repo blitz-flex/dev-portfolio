@@ -30,14 +30,16 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 max-w-4xl mx-auto px-6">
-      <div className="text-center mb-12">
-        <p className="text-accent dark:text-dark-accent text-sm font-mono uppercase tracking-widest mb-3 font-bold"> Get In Touch</p>
+    <section id="contact" className="py-24 bg-lightbg dark:bg-darkbg">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="section-title">
+          <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2"></span>
+          Get In Touch
+          <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
+        </h2>
 
-      </div>
-      
-      <div className="max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="max-w-5xl mx-auto mt-10">
+          <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="group">
               <input 
@@ -99,6 +101,7 @@ function Contact() {
             )}
           </button>
         </form>
+      </div>
       </div>
     </section>
   )

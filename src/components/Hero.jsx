@@ -7,7 +7,7 @@ function Hero() {
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-accent/50 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="text-center max-w-3xl mx-auto animate-float relative z-10">
+      <div className="text-center max-w-5xl mx-auto animate-float relative z-10">
         <p className="text-accent text-sm mb-4 font-mono uppercase tracking-widest">Welcome to my portfolio</p>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-heading leading-tight mb-4 dark:text-dark-heading">
           Irakli <span className="neon-glow">Abashidze</span>
