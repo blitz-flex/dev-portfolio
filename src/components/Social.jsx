@@ -32,22 +32,38 @@ function Social() {
   ]
 
   return (
-    <section id="social" className="py-12 px-6 text-center bg-lightbg dark:bg-darkbg">
-      <h2 className="text-3xl font-bold mb-8 text-heading dark:text-dark-heading">Connect With Me</h2>
-      
-      <div className="flex justify-center items-center gap-6">
-        {socialLinks.map((link, index) => (
-          <a 
-            key={index}
-            href={link.url} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-heading dark:text-dark-heading hover:text-accent dark:hover:text-dark-accent transition-colors p-2"
-            aria-label={link.name}
-          >
-            {link.icon}
-          </a>
-        ))}
+    <section id="social" className="pt-8 pb-4 px-6 border-t border-light-border dark:border-dark-border bg-lightbg dark:bg-darkbg">
+      <div className="max-w-4xl mx-auto">
+        {/* Social Icons */}
+        <div className="flex justify-center items-center gap-6 mb-6">
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-all duration-300 hover:-translate-y-1"
+              aria-label={link.name}
+              title={link.name}
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="w-10 h-px bg-accent dark:bg-dark-accent mx-auto mb-5"></div>
+
+        {/* Footer Content */}
+        <div className="text-center">
+          <p className="text-heading dark:text-dark-heading font-semibold text-sm">
+            Irakli Abashidze
+          </p>
+
+          <p className="text-secondary/60 dark:text-dark-secondary/60 text-xs mt-2">
+            © 2026 All rights reserved
+          </p>
+        </div>
       </div>
     </section>
   )

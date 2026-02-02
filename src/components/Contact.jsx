@@ -30,27 +30,23 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 max-w-4xl mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-heading dark:text-dark-heading mb-4">
-          Let's Work Together
-        </h2>
-        <p className="text-lg text-secondary dark:text-dark-secondary max-w-2xl mx-auto">
-          Have a project in mind or just want to chat? Drop me a message and I'll get back to you as soon as possible.
-        </p>
+    <section id="contact" className="py-16 max-w-4xl mx-auto px-6">
+      <div className="text-center mb-12">
+        <p className="text-accent dark:text-dark-accent text-sm font-mono uppercase tracking-widest mb-3 font-bold"> Get In Touch</p>
+
       </div>
       
       <div className="max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="group">
               <input 
                 type="text" 
                 id="name" 
                 name="name" 
-                placeholder="Name" 
-                required 
-                className="w-full py-4 px-5 bg-card dark:bg-dark-card text-heading dark:text-dark-heading border-2 border-light-border dark:border-dark-border rounded-xl focus:outline-none focus:border-accent dark:focus:border-dark-accent transition-all duration-300 placeholder:text-secondary/50 dark:placeholder:text-dark-secondary/50"
+                placeholder="Your Name"
+                required
+                className="input-modern"
               />
             </div>
             
@@ -59,9 +55,9 @@ function Contact() {
                 type="email" 
                 id="email" 
                 name="_replyto" 
-                placeholder="Email" 
-                required 
-                className="w-full py-4 px-5 bg-card dark:bg-dark-card text-heading dark:text-dark-heading border-2 border-light-border dark:border-dark-border rounded-xl focus:outline-none focus:border-accent dark:focus:border-dark-accent transition-all duration-300 placeholder:text-secondary/50 dark:placeholder:text-dark-secondary/50"
+                placeholder="Your Email"
+                required
+                className="input-modern"
               />
             </div>
           </div>
@@ -71,9 +67,9 @@ function Contact() {
               id="message" 
               name="message" 
               rows="6" 
-              placeholder="Your message" 
-              required 
-              className="w-full py-4 px-5 bg-card dark:bg-dark-card text-heading dark:text-dark-heading border-2 border-light-border dark:border-dark-border rounded-xl focus:outline-none focus:border-accent dark:focus:border-dark-accent transition-all duration-300 resize-none placeholder:text-secondary/50 dark:placeholder:text-dark-secondary/50"
+              placeholder="Your Message"
+              required
+              className="input-modern resize-none"
             ></textarea>
           </div>
           
@@ -88,7 +84,7 @@ function Contact() {
           <button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full py-4 px-8 bg-accent dark:bg-dark-accent text-darkbg dark:text-darkbg font-semibold rounded-xl hover:shadow-lg hover:shadow-accent/20 dark:hover:shadow-dark-accent/20 hover:-translate-y-0.5 transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+            className="w-full btn-gradient disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center gap-2">
@@ -99,7 +95,7 @@ function Contact() {
                 Sending...
               </span>
             ) : (
-              'Send Message →'
+              'Send Message '
             )}
           </button>
         </form>

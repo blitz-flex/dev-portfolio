@@ -15,8 +15,8 @@ function Projects() {
       live: 'https://blitz-flex.github.io/order-summary/'
     },
     {
-      title: 'calculatot_odin',
-      description: 'This project is a fully-functional web calculator built with HTML, CSS, and JavaScript. It features a modern, visually appealing interface with smooth animations and comprehensive calculation capabilities. The calculator is designed for both mouse and keyboard input, making it versatile for different user preferences.',
+      title: 'calculator_odin',
+      description: 'A fully-functional web calculator built with HTML, CSS, and JavaScript. Features modern interface with smooth animations and comprehensive calculation capabilities. Supports both mouse and keyboard input for versatile usage.',
       image: '/assets/1.jpg',
       github: 'https://github.com/blitz-flex/calculatot_odin',
       live: 'https://blitz-flex.github.io/calculatot_odin/'
@@ -24,31 +24,33 @@ function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-24 bg-[var(--color-lightbg)] dark:bg-[var(--color-darkbg)]">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-heading mb-8 relative flex items-center">
-          <span className="font-mono text-xl md:text-2xl text-accent font-normal mr-2"></span>
-          Some Things I've Built
-          <span className="block flex-1 h-px bg-[var(--color-light-border)] dark:bg-[var(--color-dark-border)] ml-4"></span>
+    <section id="projects" className="py-24 bg-lightbg dark:bg-darkbg">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="section-title">
+          <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2">03.</span>
+          Portfolio
+          <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {projects.map((project, index) => (
-            <div key={index} className="bg-card border border-[var(--color-light-border)] dark:border-[var(--color-dark-border)] rounded-lg overflow-hidden shadow-lg transition flex flex-col h-full hover:-translate-y-1 hover:shadow-xl">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-4">
-                  <i className="far fa-folder text-accent text-3xl"></i>
-                  <div className="flex space-x-4">
-                    <a href={project.github} className="text-secondary hover:text-accent transition" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                      <i className="fab fa-github text-xl"></i>
+            <div key={index} className="card-gradient hover-lift border border-light-border dark:border-dark-border rounded-xl overflow-hidden flex flex-col h-full group">
+              <div className="relative overflow-hidden h-48 bg-light-border dark:bg-dark-border">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow relative z-10">
+                <div className="flex justify-between items-start mb-3">
+                  <i className="far fa-folder text-accent dark:text-dark-accent text-3xl"></i>
+                  <div className="flex space-x-3">
+                    <a href={project.github} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-all duration-300 hover:scale-125" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="View Code">
+                      <i className="fab fa-github text-lg"></i>
                     </a>
-                    <a href={project.live} className="text-secondary hover:text-accent transition" target="_blank" rel="noopener noreferrer" aria-label="External Link">
-                      <i className="fas fa-external-link-alt text-xl"></i>
+                    <a href={project.live} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-all duration-300 hover:scale-125" target="_blank" rel="noopener noreferrer" aria-label="Live Demo" title="View Live">
+                      <i className="fas fa-external-link-alt text-lg"></i>
                     </a>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-heading mb-2">{project.title}</h3>
-                <p className="mt-2 text-secondary text-sm mb-4 flex-grow">{project.description}</p>
+                <h3 className="text-lg font-bold text-heading dark:text-dark-heading mb-2">{project.title}</h3>
+                <p className="text-secondary dark:text-dark-secondary text-sm leading-relaxed flex-grow">{project.description}</p>
               </div>
             </div>
           ))}
