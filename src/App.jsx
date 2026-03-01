@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setDarkMode(true)
       document.documentElement.classList.add('dark')
@@ -27,17 +27,17 @@ function App() {
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-sans selection:bg-brand-primary/30 antialiased overflow-x-hidden transition-colors duration-500">
       <Header darkMode={darkMode} toggleTheme={toggleTheme} />
-      <main className="container mx-auto px-4 py-8">
+      <main className="w-full">
         <Hero />
         <About />
         <Experience />
         <Projects />
         <Contact />
-        <Social />
       </main>
-    </>
+      <Social />
+    </div>
   )
 }
 

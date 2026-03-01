@@ -1,7 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Header({ darkMode, toggleTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
@@ -13,35 +22,36 @@ function Header({ darkMode, toggleTheme }) {
 
   return (
     <>
-      <header className="fixed w-full top-0 glass z-50 border-b border-light-border/30 dark:border-dark-border/30">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#home" className="text-accent dark:text-dark-accent font-bold text-xl font-mono hover:opacity-80 transition-opacity relative z-20">
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0,0,256,256">
-              <g fill="currentColor" fillRule="nonzero">
-                <g transform="scale(5.12,5.12)">
-                  <path d="M5.489,24.746l12.936,3.715l-2.843,-8.842zM44.571,25.524l-12.81,-2.869l2.312,9.607zM17.676,17.451l11.39,2.551l-3.702,-15.385zM29.587,22.168l-11.944,-2.675l3.096,9.633l11.303,3.246zM31.877,34.405l-10.401,-2.987l4.506,14.017zM33.992,34.691l-6.819,12.758l19.578,-20.947zM47.226,24.019l-20.384,-21.811l4.399,18.281l15.799,3.538c0.061,-0.012 0.124,-0.008 0.186,-0.008zM19.161,30.753l-16.24,-4.664l21.724,21.725zM15.306,17.516l8.933,-14.912l-21.085,21.085z"></path>
-                </g>
-              </g>
-            </svg>
+      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-lg' : 'bg-transparent'} py-4`}>
+        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+
+          <a href="#home" className="hover:opacity-80 transition-opacity relative z-20 flex items-center group">
+            <div className="relative w-12 h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-current transition-all duration-500">
+                {/* Traditional Serif 'I' focused and clear */}
+                <path d="M52 22h22v6h-7v44h7v6H52v-6h7V28h-7v-6z" className="text-text-light dark:text-text-dark" />
+
+                {/* Three precise wing strokes - even closer to reference image */}
+                <path d="M48 25 C 20 25, 10 55, 48 85 C 22 75, 22 40, 48 25" className="text-brand-primary opacity-100" />
+                <path d="M48 40 C 22 40, 15 65, 48 95 C 28 85, 28 55, 48 40" className="text-brand-primary opacity-70" />
+                <path d="M48 55 C 25 55, 20 80, 48 100 C 32 90, 32 70, 48 55" className="text-brand-primary opacity-45" />
+              </svg>
+              <div className="absolute inset-0 bg-brand-primary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
           </a>
-          
-          <div className="flex items-center space-x-4">
+
+          <div className="flex items-center space-x-6">
             <nav className="hidden md:block">
-              <ul className="flex space-x-8 text-sm font-mono">
-                <li><a href="#home" className="underline-hover text-secondary dark:text-dark-secondary">Home</a></li>
-                <li><a href="#about" className="underline-hover text-secondary dark:text-dark-secondary">About</a></li>
-                <li><a href="#experience" className="underline-hover text-secondary dark:text-dark-secondary">Experience</a></li>
-                <li><a href="#projects" className="underline-hover text-secondary dark:text-dark-secondary">Projects</a></li>
-                <li><a href="#contact" className="underline-hover text-secondary dark:text-dark-secondary">Contact</a></li>
-                <li>
-                  <a href="/assets/Irakli_Abashidze_CV.pdf" className="px-4 py-2 text-sm rounded-lg border-2 border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-darkbg dark:border-dark-accent dark:text-dark-accent transition-all duration-300 font-semibold">
-                    Resume
-                  </a>
-                </li>
+              <ul className="flex space-x-8 text-sm font-medium">
+                <li><a href="#home" className="nav-link">Home</a></li>
+                <li><a href="#about" className="nav-link">About</a></li>
+                <li><a href="#experience" className="nav-link">Experience</a></li>
+                <li><a href="#projects" className="nav-link">Projects</a></li>
+                <li><a href="#contact" className="nav-link">Contact</a></li>
               </ul>
             </nav>
-            
-            <button onClick={toggleTheme} className="p-2 border border-accent dark:border-dark-accent text-accent dark:text-dark-accent hover:bg-accent dark:hover:bg-dark-accent hover:text-white dark:hover:text-darkbg rounded transition-all duration-300" aria-label="Toggle theme">
+
+            <button onClick={toggleTheme} className="p-2 border border-border-light dark:border-border-dark text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary rounded-lg transition-all duration-300 bg-surface-light dark:bg-surface-dark shadow-sm hover:shadow" aria-label="Toggle theme">
               {darkMode ? (
                 <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -52,29 +62,23 @@ function Header({ darkMode, toggleTheme }) {
                 </svg>
               )}
             </button>
-            
-            <button onClick={toggleMobileMenu} className={`md:hidden p-2 focus:outline-none transition-all duration-300 ${mobileMenuOpen ? 'active' : ''}`}>
-              <div className={`w-6 h-0.5 bg-accent dark:bg-dark-accent transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-accent dark:bg-dark-accent transition-all duration-300 mt-1.5 ${mobileMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-accent dark:bg-dark-accent transition-all duration-300 mt-1.5 ${mobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
+
+            <button onClick={toggleMobileMenu} className={`md:hidden p-2 focus:outline-none transition-all duration-300 z-50`}>
+              <div className={`w-6 h-[2px] bg-text-light dark:bg-text-dark transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></div>
+              <div className={`w-6 h-[2px] bg-text-light dark:bg-text-dark transition-all duration-300 mt-1.5 ${mobileMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-6 h-[2px] bg-text-light dark:bg-text-dark transition-all duration-300 mt-1.5 ${mobileMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></div>
             </button>
           </div>
         </div>
       </header>
 
-      <nav className={`md:hidden fixed top-0 right-0 w-3/4 max-w-sm h-full bg-lightbg dark:bg-darkbg shadow-lg z-[60] transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <button onClick={closeMobileMenu} className="absolute top-5 right-5 p-2 text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors">
-          <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <ul className="flex flex-col items-center justify-center h-full space-y-6 text-lg font-mono">
-          <li><a href="#home" onClick={closeMobileMenu} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors duration-300">Home</a></li>
-          <li><a href="#about" onClick={closeMobileMenu} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors duration-300">About</a></li>
-          <li><a href="#experience" onClick={closeMobileMenu} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors duration-300">Experience</a></li>
-          <li><a href="#projects" onClick={closeMobileMenu} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors duration-300">Projects</a></li>
-          <li><a href="#contact" onClick={closeMobileMenu} className="text-secondary dark:text-dark-secondary hover:text-accent dark:hover:text-dark-accent transition-colors duration-300">Contact</a></li>
-          <li><a href="/assets/Irakli_Abashidze_CV.pdf" className="px-4 py-2 rounded border border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-darkbg transition-all duration-300">Resume</a></li>
+      <nav className={`md:hidden fixed inset-0 w-full h-full bg-bg-light/95 dark:bg-bg-dark/95 backdrop-blur-lg z-40 transition-all duration-300 flex items-center justify-center ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <ul className="flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+          <li><a href="#home" onClick={closeMobileMenu} className="text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300">Home</a></li>
+          <li><a href="#about" onClick={closeMobileMenu} className="text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300">About</a></li>
+          <li><a href="#experience" onClick={closeMobileMenu} className="text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300">Experience</a></li>
+          <li><a href="#projects" onClick={closeMobileMenu} className="text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300">Projects</a></li>
+          <li><a href="#contact" onClick={closeMobileMenu} className="text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300">Contact</a></li>
         </ul>
       </nav>
     </>

@@ -4,114 +4,108 @@
 
 @layer base {
   body {
-    @apply font-sans bg-lightbg dark:bg-darkbg text-darkText dark:text-lightText transition-colors duration-300;
+    @apply antialiased tracking-normal font-sans;
   }
-  
+
   html {
     @apply scroll-smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 5rem;
   }
 
-  a {
-    @apply transition-colors duration-300;
-  }
-
-  button {
-    @apply transition-all duration-300;
+  /* Headings typography mapping */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-text-light dark:text-text-dark;
   }
 }
 
 @layer components {
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-heading dark:text-dark-heading mb-8 relative flex items-center;
+
+  /* Layout Padding */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 py-20 md:py-24 w-full;
   }
 
-  /* Glassmorphism effect */
-  .glass {
-    @apply bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  /* Sophisticated Headers */
+  .section-header {
+    @apply text-3xl md:text-5xl font-black mb-12 flex items-center gap-6 relative w-fit;
   }
 
-  /* Modern gradient button */
-  .btn-gradient {
-    @apply relative px-8 py-3 font-semibold rounded-lg text-white overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg;
-    background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%);
+  .section-header::after {
+    @apply content-[''] hidden md:block w-32 md:w-64 h-[2px] bg-gradient-to-r from-brand-primary/50 to-transparent rounded-full;
   }
 
-  .btn-gradient:hover {
-    background: linear-gradient(135deg, #0099ff 0%, #00ccff 100%);
+  /* Glass/Glow Interactive Cards */
+  .pro-card {
+    @apply relative overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl p-5 md:p-6 transition-all duration-300;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   }
 
-  .btn-gradient.dark {
-    background: linear-gradient(135deg, #64ffda 0%, #00ffff 100%);
-    @apply text-darkbg;
+  .dark .pro-card {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   }
 
-  .btn-gradient.dark:hover {
-    background: linear-gradient(135deg, #00ffff 0%, #00ffdd 100%);
+  .pro-card:hover {
+    @apply border-brand-primary/40 dark:border-brand-primary/50 shadow-lg -translate-y-1;
   }
 
-  /* Card with gradient border */
-  .card-gradient {
-    @apply relative bg-card dark:bg-dark-card rounded-xl p-6 overflow-hidden;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  .dark .pro-card:hover {
+    box-shadow: 0 10px 40px -10px rgba(79, 70, 229, 0.15), 0 0 0 1px rgba(79, 70, 229, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 
-  .card-gradient::before {
-    @apply absolute inset-0 rounded-xl pointer-events-none;
-    content: '';
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, transparent 100%);
+  /* Minimal Tech Chips */
+  .tech-chip {
+    @apply px-3.5 py-1.5 text-xs font-mono font-medium rounded-full bg-brand-primary/10 dark:bg-brand-primary/15 text-brand-primary dark:text-indigo-300 border border-brand-primary/20 transition-all duration-300 hover:bg-brand-primary/20;
   }
 
-  /* Animated gradient background */
-  .gradient-bg {
-    @apply relative;
-    background: linear-gradient(-45deg, rgba(13, 110, 253, 0.05), rgba(100, 255, 218, 0.05));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+  /* Modern Solid Base Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold rounded-xl bg-brand-primary text-white hover:bg-indigo-500 shadow-md shadow-brand-primary/30 transition-all duration-300 active:scale-95 hover:-translate-y-0.5 relative overflow-hidden;
   }
 
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold rounded-xl border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:border-brand-primary hover:text-brand-primary dark:hover:border-brand-primary dark:hover:text-indigo-300 transition-all duration-300 bg-surface-light dark:bg-surface-dark/50 active:scale-95 shadow-sm;
   }
 
-  /* Hover lift effect */
-  .hover-lift {
-    @apply transition-all duration-300;
+  /* Highlighting text gradients */
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-indigo-400 to-brand-secondary;
   }
 
-  .hover-lift:hover {
-    @apply -translate-y-2 shadow-2xl;
+  /* Timeline line configuration */
+  .timeline-bar {
+    @apply absolute ml-5 md:ml-0 md:left-[calc(30%-1px)] top-0 bottom-0 w-[2px] bg-gradient-to-b from-brand-primary/5 via-brand-primary/20 to-brand-primary/5 z-0;
   }
 
-  /* Neon glow effect */
-  .neon-glow {
-    @apply text-accent dark:text-dark-accent;
-    text-shadow: 0 0 10px rgba(13, 110, 253, 0.5), 0 0 20px rgba(13, 110, 253, 0.3);
+  /* Timeline Dot Glowing */
+  .timeline-dot {
+    @apply absolute w-4 h-4 rounded-full bg-surface-light dark:bg-surface-dark border-[3px] border-brand-primary left-[-24px] md:left-[-9px] top-6 z-10;
+    box-shadow: 0 0 12px rgba(79, 70, 229, 0.5);
   }
 
-  /* Modern input styling */
-  .input-modern {
-    @apply w-full py-4 px-5 bg-card dark:bg-dark-card text-heading dark:text-dark-heading border-2 border-light-border dark:border-dark-border rounded-xl focus:outline-none focus:border-accent dark:focus:border-dark-accent transition-all duration-300 placeholder:text-secondary/50 dark:placeholder:text-dark-secondary/50;
+  /* Animated Navigation Links */
+  .nav-link {
+    @apply relative font-medium text-sm text-text-light-muted dark:text-text-dark-muted hover:text-brand-primary dark:hover:text-indigo-300 transition-colors duration-200 py-1;
   }
 
-  .input-modern:focus {
-    @apply shadow-lg shadow-accent/20 dark:shadow-dark-accent/20;
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-brand-primary translate-y-[4px] opacity-0 transition-all duration-300;
   }
 
-  /* Smooth underline hover */
-  .underline-hover {
-    @apply relative pb-1 transition-colors duration-300;
-  }
-
-  .underline-hover::after {
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent dark:bg-dark-accent transition-all duration-300;
-    content: '';
-  }
-
-  .underline-hover:hover::after {
-    @apply w-full;
+  .nav-link:hover::after {
+    @apply translate-y-[0px] opacity-100;
   }
 }
 
+/* Base utility for grid glows */
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+}
+
+.bg-grid-black {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.04)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+}

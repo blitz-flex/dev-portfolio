@@ -1,34 +1,37 @@
 function About() {
-  const skills = ['HTML5', 'Tailwind CSS', 'JavaScript', 'React', 'C', 'Python']
+  const skills = ['HTML5', 'CSS3 / Tailwind', 'JavaScript (ES6+)', 'React', 'Python', 'Flask', 'Node.js', 'UI/UX Prototyping']
 
   return (
-    <section id="about" className="py-24 max-w-5xl mx-auto px-6">
-      <h2 className="section-title">
-        <span className="font-mono text-xl md:text-2xl text-accent dark:text-dark-accent font-normal mr-2"></span>
-        About Me
-        <span className="block flex-1 h-px bg-light-border dark:bg-dark-border ml-4"></span>
-      </h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-2">
-          <p className="text-secondary dark:text-dark-secondary mb-4 leading-relaxed text-lg">
-            Hello! I'm Irakli, a passionate <span className="text-accent dark:text-dark-accent font-semibold">web developer</span> with a love for building beautiful and functional digital experiences.
+    <section id="about" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark border-t border-border-light dark:border-border-dark">
+      <h2 className="section-header">About Me</h2>
+
+      <div className="grid md:grid-cols-5 gap-12 items-start">
+        <div className="md:col-span-3 space-y-6 text-lg text-text-light-muted dark:text-text-dark-muted leading-relaxed font-normal">
+          <p>
+            Hello! I'm Irakli, a detail-oriented <span className="text-brand-primary font-semibold">Web Developer</span> who loves crafting seamless digital experiences that balance form and function.
           </p>
-          <p className="text-secondary dark:text-dark-secondary mb-4 leading-relaxed">
-            My journey started during university, where I discovered my passion for coding. Since then, I've been actively developing my skills in modern web technologies, focusing on creating clean, maintainable code and intuitive user interfaces.
+          <p>
+            My journey began driven by an insatiable curiosity for how things work on the internet. Since then, I've honed my skills building fast, scalable frontends with clean, maintainable architecture.
           </p>
-          <p className="text-secondary dark:text-dark-secondary leading-relaxed">
-            When I'm not coding, you'll find me learning new technologies, contributing to open-source projects, or exploring the latest design trends.
+          <p>
+            I approach problems with a design-engineering mindset, ensuring UI patterns don't just look stunning, but also provide an incredibly comfortable user experience.
           </p>
         </div>
-        <div className="card-gradient hover-lift">
-          <h3 className="text-lg font-bold text-heading dark:text-dark-heading mb-4">Tech Stack</h3>
-          <ul className="space-y-3">
+
+        <div className="md:col-span-2 pro-card">
+          <div className="flex items-center gap-3 mb-6">
+            <svg className="w-5 h-5 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <h3 className="text-xl font-bold text-text-light dark:text-text-dark">Core Stack</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
             {skills.map((skill, index) => (
-              <li key={index} className="relative pl-6 text-secondary dark:text-dark-secondary before:content-['→'] before:absolute before:left-0 before:text-accent dark:before:text-dark-accent before:font-bold">
+              <span key={index} className="tech-chip">
                 {skill}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>

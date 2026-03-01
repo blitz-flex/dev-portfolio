@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: 'class',
   content: [
     "./index.html",
@@ -8,29 +8,43 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkbg: '#0a192f',
-        lightbg: '#f8f9fa',
-        accent: '#0d6efd',
-        'dark-accent': '#64ffda',
-        lightText: '#8892b0',
-        darkText: '#212529',
-        heading: '#0a192f',
-        'dark-heading': '#ccd6f6',
-        secondary: '#6c757d',
-        'dark-secondary': '#8892b0',
-        card: '#ffffff',
-        'dark-card': '#112240',
-        'light-border': '#dee2e6',
-        'dark-border': '#303f5b',
+        'bg-dark': '#06080F',       // Very deep midnight blue
+        'bg-light': '#FAFAFC',      // Off-white minimal paper
+
+        'surface-dark': '#0D111D',  // Card background dark
+        'surface-light': '#FFFFFF', // Card background light
+
+        'border-dark': '#1F2937',   // Slate 800
+        'border-light': '#E5E7EB',  // Gray 200
+
+        'brand-primary': '#4F46E5', // Indigo 600
+        'brand-secondary': '#06B6D4', // Cyan 500
+        'brand-accent': '#10B981',  // Emerald 500
+
+        'text-dark': '#F9FAFB',     // Gray 50
+        'text-dark-muted': '#9CA3AF', // Gray 400
+
+        'text-light': '#111827',    // Gray 900
+        'text-light-muted': '#4B5563', // Gray 600
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
-        mono: ['SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['Fira Code', 'JetBrains Mono', 'monospace'],
       },
       animation: {
-        float: 'float 3s ease-in-out infinite',
+        'fade-in': 'fadeIn 1s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
