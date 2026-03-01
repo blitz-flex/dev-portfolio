@@ -27,7 +27,7 @@ function Experience() {
   ]
 
   return (
-    <section id="experience" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark border-t border-border-light dark:border-border-dark overflow-hidden">
+    <section id="experience" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
       <h2 className="section-header">Experience</h2>
 
       <div className="relative mt-12 max-w-5xl mx-auto">
@@ -79,9 +79,7 @@ function Experience() {
         </div>
       </div>
 
-      {/* Decorative blurred spots */}
-      <div className="absolute top-1/3 left-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+
     </section>
   )
 }

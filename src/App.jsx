@@ -6,6 +6,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Social from './components/Social'
+import Background from './components/Background'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -27,16 +28,19 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-sans selection:bg-brand-primary/30 antialiased overflow-x-hidden transition-colors duration-500">
-      <Header darkMode={darkMode} toggleTheme={toggleTheme} />
-      <main className="w-full">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Social />
+    <div className="min-h-screen relative text-text-light dark:text-text-dark font-sans selection:bg-brand-primary/30 antialiased overflow-x-hidden">
+      <Background />
+      <div className="relative z-10 w-full flex flex-col min-h-screen">
+        <Header darkMode={darkMode} toggleTheme={toggleTheme} />
+        <main className="w-full flex-grow">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <Social />
+      </div>
     </div>
   )
 }

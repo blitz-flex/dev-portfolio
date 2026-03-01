@@ -26,15 +26,20 @@ function Header({ darkMode, toggleTheme }) {
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
 
           <a href="#home" className="hover:opacity-80 transition-opacity relative z-20 flex items-center group">
-            <div className="relative w-12 h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+            <div className="relative w-14 h-14 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
               <svg viewBox="0 0 100 100" className="w-full h-full fill-current transition-all duration-500">
-                {/* Traditional Serif 'I' focused and clear */}
-                <path d="M52 22h22v6h-7v44h7v6H52v-6h7V28h-7v-6z" className="text-text-light dark:text-text-dark" />
+                {/* Traditional Serif 'I' - Centered for symmetry */}
+                <path d="M40 22h20v6h-6v44h6v6H40v-6h6V28h-6v-6z" className="text-text-light dark:text-text-dark" />
 
-                {/* Three precise wing strokes - even closer to reference image */}
-                <path d="M48 25 C 20 25, 10 55, 48 85 C 22 75, 22 40, 48 25" className="text-brand-primary opacity-100" />
-                <path d="M48 40 C 22 40, 15 65, 48 95 C 28 85, 28 55, 48 40" className="text-brand-primary opacity-70" />
-                <path d="M48 55 C 25 55, 20 80, 48 100 C 32 90, 32 70, 48 55" className="text-brand-primary opacity-45" />
+                {/* Left wing strokes */}
+                <path d="M38 25 C 10 25, 5 55, 38 85 C 15 75, 15 40, 38 25" className="text-brand-primary opacity-100" />
+                <path d="M38 40 C 12 40, 8 65, 38 95 C 18 85, 18 55, 38 40" className="text-brand-primary opacity-70" />
+                <path d="M38 55 C 15 55, 12 80, 38 100 C 22 90, 22 70, 38 55" className="text-brand-primary opacity-45" />
+
+                {/* Right wing strokes - Mirrored */}
+                <path d="M62 25 C 90 25, 95 55, 62 85 C 85 75, 85 40, 62 25" className="text-brand-primary opacity-100" />
+                <path d="M62 40 C 88 40, 92 65, 62 95 C 82 85, 82 55, 62 40" className="text-brand-primary opacity-70" />
+                <path d="M62 55 C 85 55, 88 80, 62 100 C 78 90, 78 70, 62 55" className="text-brand-primary opacity-45" />
               </svg>
               <div className="absolute inset-0 bg-brand-primary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>

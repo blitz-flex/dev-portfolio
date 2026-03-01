@@ -27,10 +27,12 @@ function Projects() {
   ]
 
   return (
-    <section id="projects" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark border-t border-border-light dark:border-border-dark">
-      <h2 className="section-header">Featured Work</h2>
+    <section id="projects" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+
+      <h2 className="section-header relative z-10">Featured Work</h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 relative z-10">
         {projects.map((project, index) => (
           <div key={index} className="pro-card p-0 flex flex-col group h-full">
             <div className="relative h-48 sm:h-56 overflow-hidden bg-surface-dark border-b border-border-light dark:border-border-dark">

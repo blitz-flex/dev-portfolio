@@ -30,24 +30,16 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark border-t border-border-light dark:border-border-dark overflow-hidden">
-      <h2 className="section-header">Let's Connect</h2>
+    <section id="contact" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
 
-      <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start mt-12">
+
+      <h2 className="section-header relative z-10">Let's Connect</h2>
+
+      <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start mt-12 relative z-10">
         <div className="space-y-6 text-lg text-text-light-muted dark:text-text-dark-muted leading-relaxed font-normal">
           <p>
-            I am currently open for full-time roles or freelance opportunities. Whether you have a specific project in mind, want to discuss a potential partnership, or just want to say hi, my inbox is always open.
+            I am currently open for full-time roles or freelance opportunities. Whether you have a specific project in mind or want to discuss a potential partnership, I'm always excited to hear about new challenges and how I can help solve them.
           </p>
-          <p>
-            I pride myself on effective communication, transparency, and prompt responses. By working together, we can transform your unique vision into a robust, high-performing, and user-centric digital solution.
-          </p>
-          <p>
-            I'm always excited to hear about new challenges and how I can help solve them through innovative design and clean code. Let's build something exceptional together!
-          </p>
-          <div className="pt-4 flex items-center gap-2 text-brand-primary text-sm font-semibold uppercase tracking-wider">
-            <span className="w-8 h-[1px] bg-brand-primary"></span>
-            Available for New Opportunities
-          </div>
         </div>
 
         <div className="pro-card !p-6 md:!p-8">

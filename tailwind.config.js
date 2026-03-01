@@ -8,21 +8,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-dark': '#06080F',       // Very deep midnight blue
+        'bg-dark': '#0f1117',       // GitHub-dark inspired — deep navy, not pure black
         'bg-light': '#FAFAFC',      // Off-white minimal paper
 
-        'surface-dark': '#0D111D',  // Card background dark
+        'surface-dark': '#1a1d2e',  // Card surface — clearly lighter than bg (elevation)
         'surface-light': '#FFFFFF', // Card background light
 
-        'border-dark': '#1F2937',   // Slate 800
+        'border-dark': '#2e3347',   // Visible border in dark mode
         'border-light': '#E5E7EB',  // Gray 200
 
         'brand-primary': '#4F46E5', // Indigo 600
         'brand-secondary': '#06B6D4', // Cyan 500
         'brand-accent': '#10B981',  // Emerald 500
 
-        'text-dark': '#F9FAFB',     // Gray 50
-        'text-dark-muted': '#9CA3AF', // Gray 400
+        'text-dark': '#E8EAF0',     // Slightly warm white — easier on eyes
+        'text-dark-muted': '#8892AA', // Blue-gray muted — better contrast on dark bg
 
         'text-light': '#111827',    // Gray 900
         'text-light-muted': '#4B5563', // Gray 600
@@ -49,6 +49,9 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },

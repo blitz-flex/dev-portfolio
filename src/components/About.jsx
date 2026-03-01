@@ -2,10 +2,12 @@ function About() {
   const skills = ['HTML5', 'CSS3 / Tailwind', 'JavaScript (ES6+)', 'React', 'Python', 'Flask', 'Node.js', 'UI/UX Prototyping']
 
   return (
-    <section id="about" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark border-t border-border-light dark:border-border-dark">
-      <h2 className="section-header">About Me</h2>
+    <section id="about" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
 
-      <div className="grid md:grid-cols-5 gap-12 items-start">
+
+      <h2 className="section-header relative z-10">About Me</h2>
+
+      <div className="grid md:grid-cols-5 gap-12 items-start relative z-10">
         <div className="md:col-span-3 space-y-6 text-lg text-text-light-muted dark:text-text-dark-muted leading-relaxed font-normal">
           <p>
             Hello! I'm Irakli, a detail-oriented <span className="text-brand-primary font-semibold">Web Developer</span> who loves crafting seamless digital experiences that balance form and function.
