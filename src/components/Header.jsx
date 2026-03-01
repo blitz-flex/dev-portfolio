@@ -22,24 +22,36 @@ function Header({ darkMode, toggleTheme }) {
 
   return (
     <>
-      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-lg' : 'bg-transparent'} py-4`}>
+      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-lg' : 'bg-transparent'} py-2`}>
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-
           <a href="#home" className="hover:opacity-80 transition-opacity relative z-20 flex items-center group">
-            <div className="relative w-14 h-14 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-              <svg viewBox="0 0 100 100" className="w-full h-full fill-current transition-all duration-500">
-                {/* Traditional Serif 'I' - Centered for symmetry */}
-                <path d="M40 22h20v6h-6v44h6v6H40v-6h6V28h-6v-6z" className="text-text-light dark:text-text-dark" />
+            <div className="relative w-10 h-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+              <svg viewBox="0 0 100 110" className="w-full h-full transition-all duration-500">
+                <defs>
+                  <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#818cf8" />
+                    <stop offset="100%" stopColor="#4F46E5" />
+                  </linearGradient>
+                </defs>
 
-                {/* Left wing strokes */}
-                <path d="M38 25 C 10 25, 5 55, 38 85 C 15 75, 15 40, 38 25" className="text-brand-primary opacity-100" />
-                <path d="M38 40 C 12 40, 8 65, 38 95 C 18 85, 18 55, 38 40" className="text-brand-primary opacity-70" />
-                <path d="M38 55 C 15 55, 12 80, 38 100 C 22 90, 22 70, 38 55" className="text-brand-primary opacity-45" />
+                {/* Serif 'I' — top serif */}
+                <rect x="30" y="14" width="40" height="7" rx="2" fill="url(#logoGrad)" />
+                {/* Stem */}
+                <rect x="44" y="21" width="12" height="62" rx="1" fill="url(#logoGrad)" />
+                {/* Bottom serif */}
+                <rect x="30" y="79" width="40" height="7" rx="2" fill="url(#logoGrad)" />
 
-                {/* Right wing strokes - Mirrored */}
-                <path d="M62 25 C 90 25, 95 55, 62 85 C 85 75, 85 40, 62 25" className="text-brand-primary opacity-100" />
-                <path d="M62 40 C 88 40, 92 65, 62 95 C 82 85, 82 55, 62 40" className="text-brand-primary opacity-70" />
-                <path d="M62 55 C 85 55, 88 80, 62 100 C 78 90, 78 70, 62 55" className="text-brand-primary opacity-45" />
+                {/* Leaf 1 — tall center leaf */}
+                <path d="M56 83 C 62 65, 80 60, 82 45 C 80 62, 70 70, 56 83 Z"
+                  fill="url(#logoGrad)" opacity="0.95" />
+
+                {/* Leaf 2 — wide right leaf */}
+                <path d="M56 86 C 65 78, 90 75, 95 63 C 88 76, 72 80, 56 86 Z"
+                  fill="url(#logoGrad)" opacity="0.75" />
+
+                {/* Leaf 3 — small lower leaf */}
+                <path d="M56 88 C 60 82, 76 82, 82 75 C 76 83, 64 85, 56 88 Z"
+                  fill="url(#logoGrad)" opacity="0.55" />
               </svg>
               <div className="absolute inset-0 bg-brand-primary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
