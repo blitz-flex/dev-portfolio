@@ -30,7 +30,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
+    <section id="contact" className="section-container relative z-10 overflow-hidden">
 
 
       <h2 className="section-header relative z-10">Let's Connect</h2>

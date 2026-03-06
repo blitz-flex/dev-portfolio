@@ -8,24 +8,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-dark': '#0f1117',       // GitHub-dark inspired — deep navy, not pure black
-        'bg-light': '#FAFAFC',      // Off-white minimal paper
+        'bg-dark': '#000000',       // Pure Obsidian Black
+        'bg-light': '#FDFDFB',      // Warm paper white
 
-        'surface-dark': '#1a1d2e',  // Card surface — clearly lighter than bg (elevation)
-        'surface-light': '#FFFFFF', // Card background light
+        'surface-dark': '#0A0A0A',  // Deep elevation
+        'surface-light': '#FFFFFF', 
 
-        'border-dark': '#2e3347',   // Visible border in dark mode
-        'border-light': '#E5E7EB',  // Gray 200
+        'border-dark': '#1A1A1A',   
+        'border-light': '#E5E7EB',  
 
-        'brand-primary': '#4F46E5', // Indigo 600
-        'brand-secondary': '#06B6D4', // Cyan 500
-        'brand-accent': '#10B981',  // Emerald 500
+        'brand-primary': '#6366F1', // Indigo accent
+        'brand-secondary': '#8B5CF6', // Violet accent
+        'brand-accent': '#C27664',  // Keeping the muted terracotta for the background mix
 
-        'text-dark': '#E8EAF0',     // Slightly warm white — easier on eyes
-        'text-dark-muted': '#8892AA', // Blue-gray muted — better contrast on dark bg
+        'text-dark': '#F3F4F6',     
+        'text-dark-muted': '#9CA3AF', 
 
-        'text-light': '#111827',    // Gray 900
-        'text-light-muted': '#4B5563', // Gray 600
+        'text-light': '#0A0A0B',    // Near black for maximum contrast
+        'text-light-muted': '#374151', // Gray 700 for better legibility 
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

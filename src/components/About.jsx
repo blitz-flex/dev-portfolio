@@ -2,7 +2,7 @@ function About() {
   const skills = ['HTML5', 'CSS3 / Tailwind', 'JavaScript (ES6+)', 'React', 'Python', 'Flask', 'Node.js', 'UI/UX Prototyping']
 
   return (
-    <section id="about" className="section-container relative z-10 bg-bg-light dark:bg-bg-dark overflow-hidden">
+    <section id="about" className="section-container relative z-10 overflow-hidden">
 
 
       <h2 className="section-header relative z-10">About Me</h2>
