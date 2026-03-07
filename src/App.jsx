@@ -28,21 +28,21 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen relative bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-sans selection:bg-brand-primary/30 antialiased overflow-x-hidden">
-      <CustomCursor />
-      <Background />
-      <div className="relative z-10 w-full flex flex-col min-h-screen">
-        <Header darkMode={darkMode} toggleTheme={toggleTheme} />
-        <main className="w-full flex-grow">
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
-        </main>
-        <Social />
+      <div className="min-h-screen relative bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-sans selection:bg-brand-primary/30 antialiased overflow-x-hidden">
+
+        <Background />
+        <div className="relative z-10 w-full flex flex-col min-h-screen">
+          <Header darkMode={darkMode} toggleTheme={toggleTheme} />
+          <main className="w-full flex-grow">
+            <Hero />
+            <About />
+            <Experience />
+            <Projects />
+            <Contact />
+          </main>
+          <Social />
+        </div>
       </div>
-    </div>
   )
 }
 
