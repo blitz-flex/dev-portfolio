@@ -9,13 +9,15 @@ import Social from './components/Social'
 import Background from './components/Background'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme === 'light') {
+      setDarkMode(false)
+      document.documentElement.classList.remove('dark')
+    } else {
       setDarkMode(true)
       document.documentElement.classList.add('dark')
     }
