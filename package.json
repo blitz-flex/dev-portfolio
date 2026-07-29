@@ -4,14 +4,11 @@
   "description": "...",
   "main": "index.js",
   "scripts": {
-    "build": "vite build",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build:prod": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "predeploy": "npm run build:prod",
-    "deploy": "gh-pages -d . --src '{index.html,script.js,dist/**,assets/**}' -b gh-pages -m 'Deploy website'",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -m 'Deploy website'"
   },
   "keywords": [],
   "author": "",
